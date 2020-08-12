@@ -33,17 +33,12 @@ class WeatherViewSet(APIView):
     def get(self, request, city_code):
         forecast_weather = ForecastWeather()
         try:
-            lat, lon = forecast_weather.get_city_coordinates_by_code(city_code)
+            response = forecast_weather.days_for_use_umbrella(city_code)
         except ObjectDoesNotExist:
             raise NotFound(detail="City not found", code=404)
-
-        try:
-            request = forecast_weather.request_daily_forecast_for_7_days(lat, lon)
         except requests.exceptions.HTTPError as error:
             return Response(str(error), status=error.response.status_code)
         except Exception as error:
             return Response(str(error))
 
-        days = forecast_weather.get_days_for_use_umbrella_in_next_5_days(request)
-
-        return Response(forecast_weather.format_output_data(days))
+        return Response(response)

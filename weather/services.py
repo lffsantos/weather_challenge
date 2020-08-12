@@ -13,6 +13,12 @@ class ForecastWeather:
         self.api_url = settings.OPENWEATHER_API
         self.APPID = settings.APPID
 
+    def days_for_use_umbrella(self, city_code):
+        lat, lon = self.get_city_coordinates_by_code(city_code)
+        response = self.request_daily_forecast_for_7_days(lat, lon)
+        days = self.get_days_for_use_umbrella_in_next_5_days(response)
+        return self.format_output_data(days)
+
     def request_daily_forecast_for_7_days(self, latitude, longitude):
         """
         https://openweathermap.org/api/one-call-api#how
