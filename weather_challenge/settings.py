@@ -139,3 +139,8 @@ STATICFILES_DIRS = (
 )
 
 HUMIDITY = config('HUMIDITY', 70)
+
+OPENWEATHER_API = config('OPENWEATHER_API', '')
+
+# APPID from https://home.openweathermap.org/
+APPID = config('APPID', '')

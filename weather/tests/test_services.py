@@ -1,8 +1,5 @@
-import os
-
 import pytest
 from django.conf import settings
-from django.test import TestCase
 
 from weather.services import format_output_data, should_use_umbrella
 
