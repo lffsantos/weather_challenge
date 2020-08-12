@@ -137,3 +137,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+HUMIDITY = config('HUMIDITY', 70)
