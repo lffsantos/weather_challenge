@@ -21,8 +21,8 @@ git clone git@github.com:lffsantos/weather_challenge.git weather_challenge
 cd weather_challenge  
 virtualenv -p python3 .venv  
 source .venv/bin/activate  
-pip install -r requirements-dev.txt  
-cp contrib/env-sample .env  
+pip install -r requirements.txt  
+cp contrib/.env-sample .env  
 python manage.py migrate
 python mangage.py load_cities
 python mangage.py load_countries
@@ -32,6 +32,8 @@ python mangage.py load_countries
 
 >pytest
 
+
+** [Configurar o **APPID** antes de executar a aplicação.](https://github.com/lffsantos/weather_challenge#configura%C3%A7%C3%B5es)
 
 ### Rodar Aplicação em dev
 
