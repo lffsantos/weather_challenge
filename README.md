@@ -83,7 +83,7 @@ Caso em nenhum dos dias a umidade seja superior:
 
 - Python 3.8
 - Django
-- Django Res Framework
+- Django Rest Framework
 - Pytest
 - SQLite
 
