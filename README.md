@@ -1,5 +1,5 @@
 
-# Should I use umbrella?  
+# Devo usar guarda chuva?  
   
 Consulta o tempo na cidade para ver se sevo usar meu guarda chuva!  
   
@@ -67,8 +67,8 @@ Listagem de cidades possíveis para buscar a previsão.
  Listagem de Países
 
 ####  [GET] -  /api/v1/weather/<CODE_CITY> 
-Faz a consulta na API do Tempo para saber se devemos utilizar o guarda chuva nos próximos 5 dias.
-*CODE_CITY = Código da cidade. 
+Faz a consulta na API do Tempo para saber se devemos utilizar o guarda chuva nos próximos 5 dias.  
+*CODE_CITY = Código da cidade.     
 **Returns**:
 - _You should take an umbrella in these days: ...._  
 **or**
