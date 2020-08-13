@@ -11,7 +11,7 @@ Demonstração: [https://weather-challenge.herokuapp.com/](https://weather-chall
 ## Como desenvolver?  
   
 1. clone o respositório.  
-2. crie um virtualenv com Python 3.7.  
+2. crie um virtualenv.  
 3. Ative o virtualenv.  
 4. Instale as dependências.  
 5. Configure a instância .env
