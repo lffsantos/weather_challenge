@@ -1,3 +1,5 @@
+import logging
+
 import requests
 from datetime import datetime
 
@@ -5,6 +7,8 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 
 from weather.models import City
+
+logger = logging.getLogger(__name__)
 
 
 class ForecastWeather:
@@ -33,15 +37,19 @@ class ForecastWeather:
 
     def call_api(self, url):
         try:
+            logger.info(f"call url {url}")
             r = requests.get(url, timeout=10)
             r.raise_for_status()
         except requests.exceptions.ConnectionError as error:
+            logger.error(error)
             raise error
         except requests.exceptions.HTTPError as error:
+            logger.error(error)
             if error.response.status_code == 401:
                 raise error
             raise error
         except Exception as error:
+            logger.error(error)
             raise error
 
         return r.json()

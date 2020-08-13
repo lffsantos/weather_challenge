@@ -26,15 +26,28 @@ $(document).ready(function() {
         }
     });
     $('#buscar').click(function () {
+        $('#buscar').addClass('disabled-search');
         let code_city = $('#city').val();
+        $('.content-body').html("");
         $.ajax({
           url: window.location.origin + `/api/v1/weather/${code_city}`,
           method: 'get',
           success: function (data, text) {
               $('.content-body').html(data)
+              $('#buscar').removeClass('disabled-search');
           },
           error: function (request, status, error) {
-              $('.content-body').html("<span style='color:red;'>"+request.responseJSON['detail']+"</span>")
+              $('#buscar').removeClass('disabled-search');
+              let text_error = request.statusText;
+              if (request.status === 401){
+                  text_error = "Não autorizado!";
+              } else{
+                  if (request.status === 400){
+                      text_error = "Parâmetros inválidos!";
+                  }
+              }
+              $('.content-body').html("<span style='color:red;'>"+text_error+"</span>")
+
           }
       });
 
