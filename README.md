@@ -33,9 +33,14 @@ python mangae.py load_countries
 >pytest
 
 
-### Rodar Aplicação
+### Rodar Aplicação em dev
 
 > python manage.py runserver
+
+
+### Rodar Aplicação em prod
+
+> gunicorn weather_challenge.wsgi
 
   
 ## Configurações  
@@ -71,3 +76,15 @@ Exemplo:
 
 Caso em nenhum dos dias a umidade seja superior:
 - _You won't need an umbrella for the next few days_
+
+
+### Tecnologias utilizadas
+
+- Python 3.8
+- Django
+- Django Res Framework
+- Pytest
+- SQLite
+
+
+** Para fins de testes foi utlizado o ***SQLITE***
