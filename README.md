@@ -24,8 +24,8 @@ source .venv/bin/activate
 pip install -r requirements-dev.txt  
 cp contrib/env-sample .env  
 python manage.py migrate
-python mangae.py load_cities
-python mangae.py load_countries
+python mangage.py load_cities
+python mangage.py load_countries
 ```  
 
 ### Rodar Testes:
@@ -76,6 +76,7 @@ Exemplo:
 
 Caso em nenhum dos dias a umidade seja superior:
 - _You won't need an umbrella for the next few days_
+<<<<<<< HEAD
 
 
 ### Tecnologias utilizadas
