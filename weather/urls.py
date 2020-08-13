@@ -1,9 +1,10 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path
-from weather.api import CityViewSet, WeatherViewSet
+from weather.api import CityViewSet, WeatherViewSet, CountryViewSet
 
 router = DefaultRouter()
 router.register(r'cities', CityViewSet, 'city')
+router.register(r'countries', CountryViewSet, 'country')
 
 
 urlpatterns = router.urls

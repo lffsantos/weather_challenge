@@ -12,8 +12,8 @@ from rest_framework.views import APIView
 
 from weather import services
 from weather.filters import CityFilter
-from weather.models import City
-from weather.serializers import CitySerializer
+from weather.models import City, Country
+from weather.serializers import CitySerializer, CountrySerializer
 from weather.services import ForecastWeather
 
 
@@ -25,6 +25,14 @@ class CityViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CitySerializer
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = CityFilter
+
+
+class CountryViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    A simple ViewSet for viewing countries.
+    """
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
 
 
 class WeatherViewSet(APIView):

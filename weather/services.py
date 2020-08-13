@@ -59,6 +59,9 @@ class ForecastWeather:
             return f"You won't need an umbrella for the next few days"
 
         days = [datetime.fromtimestamp(d).strftime('%A') for d in days]
+        if len(days) == 1:
+            return f'You should take an umbrella in these days: {days[0]}'
+
         str_days = ', '.join(days[:-1])
         if len(days) >= 2:
             str_days += ' and ' + days[-1]
