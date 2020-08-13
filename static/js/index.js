@@ -34,7 +34,7 @@ $(document).ready(function() {
               $('.content-body').html(data)
           },
           error: function (request, status, error) {
-              $('.content-body').html(error)
+              $('.content-body').html("<span style='color:red;'>"+request.responseJSON['detail']+"</span>")
           }
       });
 
