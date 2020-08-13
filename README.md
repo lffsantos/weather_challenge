@@ -78,9 +78,8 @@ Exemplo:
 , Se a umidade do ar for superior a 70% na segunda e quarta-feira , vai exibir a seguinte mensagem:
 -	_You should take an umbrella in these days: Monday and Wednesday._
 
-Caso em nenhum dos dias a umidade seja superior:
+Caso em nenhum dos dias a umidade seja superior a 70%:
 - _You won't need an umbrella for the next few days_
-<<<<<<< HEAD
 
 
 ### Tecnologias utilizadas
