@@ -9,3 +9,10 @@ class City(models.Model):
     longitude = models.CharField(max_length=20, blank=True, null=True)
     latitude = models.CharField(max_length=20, blank=True, null=True)
 
+    class Meta:
+        ordering = ['name']
+
+
+class Country(models.Model):
+    initials = models.CharField(max_length=2, unique=True)
+    name = models.CharField(max_length=100, blank=False, null=False)
