@@ -14,7 +14,9 @@ Demonstração: [https://weather-challenge.herokuapp.com/](https://weather-chall
 2. crie um virtualenv com Python 3.7.  
 3. Ative o virtualenv.  
 4. Instale as dependências.  
-5. Configure a instância .env  
+5. Configure a instância .env
+6. Rodar Migração
+7. Carregar dados iniciais.
   
 ```console  
 git clone git@github.com:lffsantos/weather_challenge.git weather_challenge  
