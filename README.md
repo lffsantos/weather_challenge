@@ -15,7 +15,6 @@ Demonstração: [https://weather-challenge.herokuapp.com/](https://weather-chall
 3. Ative o virtualenv.  
 4. Instale as dependências.  
 5. Configure a instância .env  
-6. Execute os testes.  
   
 ```console  
 git clone git@github.com:lffsantos/weather_challenge.git weather_challenge  
@@ -24,8 +23,20 @@ virtualenv -p python3 .venv
 source .venv/bin/activate  
 pip install -r requirements-dev.txt  
 cp contrib/env-sample .env  
-pytest
+python manage.py migrate
+python mangae.py load_cities
+python mangae.py load_countries
 ```  
+
+### Rodar Testes:
+
+>pytest
+
+
+### Rodar Aplicação
+
+> python manage.py runserver
+
   
 ## Configurações  
   
