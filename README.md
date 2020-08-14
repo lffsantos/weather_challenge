@@ -88,4 +88,16 @@ Caso em nenhum dos dias a umidade seja superior:
 - SQLite
 
 
-** Para fins de testes foi utlizado o ***SQLITE***
+
+** Para fins de testes localmente foi utlizado o ***SQLITE***
+
+
+============
+
+##### Atualização para demonstração:  
+**[warning]** Database disruption imminent, row limit exceeded for hobby-dev database on Heroku app weather-challenge  
+Por limitação do plano free do heroku reduzi a tabela de cidades para apenas a do Brasil.
+logo desabilitei o select do país ficando fixo o **Brasil**
+
+
+ 
