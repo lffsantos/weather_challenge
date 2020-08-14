@@ -29,7 +29,7 @@
         <form>
             <div class="form-group col-md-2">
                 <label for="inputPeriod">País</label><br>
-                <select id="country" class="select-country" name="country" style="width: 100%">
+                <select id="country" class="select-country" name="country" style="width: 100%" disabled>
                     {% for country in countries %}
                         <option value="{{country.initials}}" {% if country.initials == 'BR'%}selected{% endif %}>{{ country.name }}</option>
                     {% endfor %}
