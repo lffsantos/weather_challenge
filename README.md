@@ -1,5 +1,5 @@
 
-# Should I use umbrella?  
+# Devo usar guarda chuva?  
   
 Consulta o tempo na cidade para ver se sevo usar meu guarda chuva!  
   
@@ -11,27 +11,31 @@ Demonstração: [https://weather-challenge.herokuapp.com/](https://weather-chall
 ## Como desenvolver?  
   
 1. clone o respositório.  
-2. crie um virtualenv com Python 3.7.  
+2. crie um virtualenv.  
 3. Ative o virtualenv.  
 4. Instale as dependências.  
-5. Configure a instância .env  
+5. Configure a instância .env
+6. Rodar Migração
+7. Carregar dados iniciais.
   
 ```console  
 git clone git@github.com:lffsantos/weather_challenge.git weather_challenge  
 cd weather_challenge  
 virtualenv -p python3 .venv  
 source .venv/bin/activate  
-pip install -r requirements-dev.txt  
-cp contrib/env-sample .env  
+pip install -r requirements.txt  
+cp contrib/.env-sample .env  
 python manage.py migrate
-python mangage.py load_cities
-python mangage.py load_countries
+python manage.py load_cities
+python manage.py load_countries
 ```  
 
 ### Rodar Testes:
 
 >pytest
 
+
+** [Configurar o **APPID** antes de executar a aplicação.](https://github.com/lffsantos/weather_challenge#configura%C3%A7%C3%B5es)
 
 ### Rodar Aplicação em dev
 
@@ -63,8 +67,8 @@ Listagem de cidades possíveis para buscar a previsão.
  Listagem de Países
 
 ####  [GET] -  /api/v1/weather/<CODE_CITY> 
-Faz a consulta na API do Tempo para saber se devemos utilizar o guarda chuva nos próximos 5 dias.
-*CODE_CITY = Código da cidade. 
+Faz a consulta na API do Tempo para saber se devemos utilizar o guarda chuva nos próximos 5 dias.  
+*CODE_CITY = Código da cidade.     
 **Returns**:
 - _You should take an umbrella in these days: ...._  
 **or**
@@ -74,9 +78,8 @@ Exemplo:
 , Se a umidade do ar for superior a 70% na segunda e quarta-feira , vai exibir a seguinte mensagem:
 -	_You should take an umbrella in these days: Monday and Wednesday._
 
-Caso em nenhum dos dias a umidade seja superior:
+Caso em nenhum dos dias a umidade seja superior a 70%:
 - _You won't need an umbrella for the next few days_
-<<<<<<< HEAD
 
 
 ### Tecnologias utilizadas
@@ -88,7 +91,6 @@ Caso em nenhum dos dias a umidade seja superior:
 - SQLite
 
 
-
 ** Para fins de testes localmente foi utlizado o ***SQLITE***
 
 
@@ -98,6 +100,3 @@ Caso em nenhum dos dias a umidade seja superior:
 **[warning]** Database disruption imminent, row limit exceeded for hobby-dev database on Heroku app weather-challenge  
 Por limitação do plano free do heroku reduzi a tabela de cidades para apenas a do Brasil.
 logo desabilitei o select do país ficando fixo o **Brasil**
-
-
- 
